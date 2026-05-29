@@ -1,9 +1,7 @@
 name: Build and Deploy to ECS (Zero Credentials)
 
 on:
-  push:
-    branches: [main]
-  workflow_dispatch:
+  workflow_dispatch:  # Solo se ejecuta manualmente
 
 permissions:
   id-token: write
