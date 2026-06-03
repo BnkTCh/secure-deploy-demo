@@ -221,7 +221,15 @@ app.get('/', (req, res) => {
 })
 
 // API endpoints (JSON)
-app.get('/api/info', (req, res) => {
+app.get('/secret', (req, res) => {
+  res.json({
+    message: SECRET_MESSAGE,
+    source: 'Variable de entorno SECRET_MESSAGE',
+    note: 'Este valor fue inyectado a través de GitHub Secrets → ECS Task Definition. Nunca existió en el código fuente.',
+  })
+})
+
+app.get('/info', (req, res) => {
   res.json({
     app: 'secure-demo-app',
     environment: APP_ENV,
@@ -233,8 +241,8 @@ app.get('/api/info', (req, res) => {
 app.get('/api/secret', (req, res) => {
   res.json({
     message: SECRET_MESSAGE,
-    source: 'Environment variable SECRET_MESSAGE',
-    note: 'This value was injected via GitHub Secrets → ECS Task Definition. It never existed in the source code.',
+    source: 'Variable de entorno SECRET_MESSAGE',
+    note: 'Este valor fue inyectado a través de GitHub Secrets → ECS Task Definition. Nunca existió en el código fuente.',
   })
 })
 
