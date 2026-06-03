@@ -11,7 +11,7 @@ const APP_ENV = process.env.APP_ENV || 'local'
 app.get('/', (req, res) => {
   res.send(`
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -152,36 +152,36 @@ app.get('/', (req, res) => {
   <div class="container">
     <div class="header">
       <h1>🔐 Secure Deploy Demo</h1>
-      <p>This app demonstrates zero-credential deployments with GitHub + AWS</p>
+      <p>Esta app demuestra deploys sin credenciales con GitHub + AWS</p>
     </div>
 
     <div class="card secret">
-      <h2>🔑 Secret Message (from environment variable)</h2>
+      <h2>🔑 Mensaje Secreto (desde variable de entorno)</h2>
       <div class="value">${SECRET_MESSAGE}</div>
     </div>
 
     <div class="grid">
       <div class="card info">
-        <h2>🌍 Environment</h2>
+        <h2>🌍 Entorno</h2>
         <div class="value"><span class="badge green">${APP_ENV}</span></div>
       </div>
       <div class="card info">
-        <h2>🔐 Secret Loaded</h2>
+        <h2>🔐 Secreto Cargado</h2>
         <div class="value"><span class="badge ${SECRET_MESSAGE !== 'No secret configured' ? 'green' : 'purple'}">${SECRET_MESSAGE !== 'No secret configured' ? 'YES ✓' : 'NO ✗'}</span></div>
       </div>
     </div>
 
     <div class="card">
-      <h2>📋 How this works</h2>
+      <h2>📋 Cómo funciona</h2>
       <div class="value" style="font-size: 0.85rem; line-height: 1.6; color: #94a3b8;">
-        This secret was <strong style="color: #a78bfa;">never hardcoded</strong> in the source code.<br>
-        It was injected at runtime via:<br>
+        Este secreto <strong style="color: #a78bfa;">nunca fue hardcodeado</strong> en el código fuente.<br>
+        Fue inyectado en runtime a través de:<br>
         <span class="badge blue" style="margin-top: 0.5rem; display: inline-block;">GitHub Secrets → GitHub Actions → ECS Task Definition → Container</span>
       </div>
     </div>
 
     <div class="flow">
-      <h3>🚀 Deployment Flow (Zero Credentials)</h3>
+      <h3>🚀 Flujo de Deploy (Zero Credentials)</h3>
       <div class="flow-steps">
         <div class="flow-step">
           <div class="icon">📝</div>
@@ -205,7 +205,7 @@ app.get('/', (req, res) => {
         <div class="flow-arrow">→</div>
         <div class="flow-step">
           <div class="icon">✅</div>
-          Running!
+          Corriendo!
         </div>
       </div>
     </div>
