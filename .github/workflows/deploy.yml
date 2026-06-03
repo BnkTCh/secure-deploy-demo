@@ -61,6 +61,9 @@ jobs:
           task-definition: task-definition.json
           container-name: ${{ env.CONTAINER_NAME }}
           image: ${{ steps.build-image.outputs.image }}
+          environment-variables: |
+            SECRET_MESSAGE=${{ secrets.SECRET_MESSAGE }}
+            APP_ENV=production
 
       - name: Deploy to ECS Fargate
         uses: aws-actions/amazon-ecs-deploy-task-definition@v2
